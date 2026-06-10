@@ -45,9 +45,7 @@
         .wiki-category-box span { font-weight: bold; }
         .wiki-category-box a { color: #0275d8; text-decoration: none; }
 
-        /* =======================================================
-           사멸회유 참가자 둘러보기 틀 (이미지 타이틀 적용)
-           ======================================================= */
+        /* 사멸회유 참가자 둘러보기 틀 */
         .wiki-frame {
             width: 100%;
             border: 2px solid #000000;
@@ -78,8 +76,9 @@
             cursor: pointer;
             user-select: none;
         }
+        /* 🔒 초기 상태 접힘(none) 처리 완료 */
         .frame-body-content {
-            display: block;
+            display: none;
             background: #ffffff;
         }
         .frame-colony-title {
@@ -132,7 +131,7 @@
             line-height: 1.6;
         }
 
-        /* 캐릭터 프로필 인포박스 - 색상 #D9347A 적용 */
+        /* 캐릭터 프로필 인포박스 */
         .infobox-frame {
             border: 2px solid #D9347A;
             padding: 3px;
@@ -166,7 +165,7 @@
         }
         .infobox .image-cell {
             text-align: center;
-            padding: 0;
+            padding: 10px;
             background: #f9f9f9;
         }
         .infobox .image-cell img {
@@ -174,6 +173,8 @@
             height: auto;
             display: block;
             margin: 0 auto;
+            max-height: 400px;
+            object-fit: contain;
         }
         .infobox .attr-name {
             background-color: #D9347A !important;
@@ -183,7 +184,7 @@
             text-align: center;
         }
 
-        /* 대사/인용 상자 - 색상 #D9347A 적용 */
+        /* 대사/인용 상자 */
         .quote-box {
             border: 1px solid #ccc;
             border-left: 5px solid #D9347A; 
@@ -194,9 +195,7 @@
         .quote-line-main { font-size: 16px; font-weight: bold; color: #111; line-height: 1.5; }
         .quote-line-sub { font-size: 13px; font-weight: normal; color: #555; line-height: 1.5; margin-top: 4px; }
 
-        /* =======================================================
-           접기/펼치기 및 스포일러 틀 스타일
-           ======================================================= */
+        /* 접기/펼치기 및 스포일러 틀 스타일 */
         .section-wrapper {
             margin-bottom: 12px;
             border: 1px solid #ccc;
@@ -221,7 +220,7 @@
         .section-body {
             padding: 15px;
             border-top: 1px solid #ccc;
-            display: block; /* 기본은 펼쳐진 상태 */
+            display: block;
         }
         
         /* 작중 행적 스포일러 전용 스타일 (기본 접힘) */
@@ -243,11 +242,11 @@
             margin-top: 2px;
         }
         .spoiler-body {
-            display: none; /* 작중 행적만 기본 숨김 처리 */
+            display: none;
             background-color: #fff;
         }
 
-        /* 본문 내부 스타일 */
+        /* 本문 내부 스타일 */
         .wiki-text p { margin-bottom: 14px; text-align: justify; font-size: 14.5px; line-height: 1.7; }
         .etc-items { padding-left: 15px; margin-bottom: 15px; }
         .etc-items li { margin-bottom: 8px; font-size: 14.5px; }
@@ -272,7 +271,7 @@
 
     <div class="wiki-frame">
         <div class="frame-header">
-            <img src="https://postfiles.pstatic.net/MjAyNjA2MTBfNjYg/MDAxNzgxMDE5NzM3MjU5.jK2PLI14P5kAn4O7eVAR-nz4u-y2uDvZlXxQhICycvkg.r7qXKMYuQMXhF7JPbf5wm5PyhQYNFUGUxS7MpAwJ5rcg.JPEG/IMG%EF%BC%BF6226.jpg?type=w966" alt="사멸회유">
+            <img src="https://bloody-indigo-zqgszodr.edgeone.app/IMG_6226.jpeg" alt="사멸회유">
         </div>
         <div class="frame-toggle" onclick="toggleFrameBody()">[ 펼치기 · 접기 ]</div>
         
@@ -363,7 +362,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="image-cell">
-                    <img src="https://postfiles.pstatic.net/MjAyNjA2MTBfMTUg/MDAxNzgxMDg2MjM0NTYy.TFLDIBQC57dGfcI9w0lWCcgZlQpK4Jd5IiYRkb5ZqK0g.nzfG2wDbhGpZ7qGRcI4M6NeYQ6azWk_gB8rwYc1NdmAg.JPEG/IMG%EF%BC%BF6245.JPG?type=w966" alt="우라기와 에리 프로필 이미지">
+                    <img id="profile-img" src="https://static-rose-sx2oya2z.edgeone.app/IMG_6245.jpeg" alt="우라기와 에리 프로필 이미지">
                 </td>
             </tr>
             <tr><td class="attr-name">출생</td><td>1997년 8월 15일</td></tr>
@@ -380,7 +379,7 @@
             <div class="section-toggle-btn" onclick="toggleSection('sec-overview')">1. 개요</div>
             <div class="section-body" id="sec-overview">
                 <div class="quote-box">
-                    <div class="quote-line-main">あんた、 パンダから手を離しなさい！</div>
+                    <div class="quote-line-main">あんた、  パンダから手を離しなさい！</div>
                     <div class="quote-line-sub">너, 판다에게서 손 때!</div>
                 </div>
                 <p>만화 《주술회전》의 등장인물.</p>
@@ -420,11 +419,11 @@
             <div class="section-toggle-btn" onclick="toggleSection('sec-ability')">4. 능력</div>
             <div class="section-body" id="sec-ability">
                 <p><b>4.1. 표폭주 (標爆呪)</b><br>왼쪽 눈을 매개체로 사용하는 술식. 한쪽 눈을 감고 좌표평면을 면에 놓는 것이 <span class="coral-tag">에임(aim)</span>, 좌표를 정하고 주력을 고정하는 것이 <span class="coral-tag">셋(set)</span>이다. 고정된 주력은 폭발시키는 순서나 시간대를 정할 수 있으며, 상당한 정확도가 필요한 방식이다. 좌표평면은 공기의 면을 따라서 설정되며, 그 덕에 마키와 비슷하게 공기 중 면이 존재한다는 것을 이미 알고 있었다.<span class="footnote" onclick="showPopup(event, '당연하게도 알고만 있었지, 피지컬이 안 돼서 뭘 어떻게 사용하지 못했다.')">[4]</span></p>
-                <p>원거리형 술식이며, 거리가 멀수록 더 많은 공간에 닿을 수 있다. 그러나 카시모와 싸울 때 그가 거리를 벌리자 잠시 동안 견디는 모습을 보여주며, 활용만 잘하면 충분히 다양하게 사용할 수 있음이 밝혀졌다.</p>
+                <p>원거리형 술식이며, 거리가 멀수록 더 많은 공간에 닿을 수 있습니다. 그러나 카시모와 싸울 때 그가 거리를 벌리자 잠시 동안 견디는 모습을 보여주며, 활용만 잘하면 충분히 다양하게 사용할 수 있음이 밝혀졌다.</p>
                 <p>허벅지에 찬 가터벨트는 은색 총알 같은 주구를 모아 둔 것이며, 정확성이 필요할 때 사용한다. 에임 시 눈앞에 들거나, 맞추려는 타깃이 있는 경우에 주위로 던져 활용한다. 카시모와의 전투 때는 그의 주력을 주구로 흘려 한 번 겨우 피한 적이 있다.</p>
                 <p>그냥 좌표점만 사용하는 것이 아니라 함수의 선을 이용하기도 한다. 시부야 사변에서 이누마키 앞에 등장할 때도 점근선을 통해 그를 공격에서 제외시키는 방식을 보여줬으며, 개조인간들을 정리할 때는 복잡한 식<span class="footnote" onclick="showPopup(event, 'y=tanx의 변형으로 보인다.')">[5]</span>으로 민간인에게 닿는 여파를 거의 극한까지 줄였다. 대형 위기 상황에서 사용하기에 정말 좋은 술식이다.</p>
                 <p>안타깝게도 유타나 고죠처럼 주력이 어마무시하게 많은 게 아니라면 효율이 좋지 않다. 주력을 그대로 농축해서 터뜨리는 방식이기 때문에 한 번 사용할 때 스태미나가 갈려 나가며, 오래 사용할 수 없다. 게다가 비교적 약한 신체 능력으로 인해 내구성이 약하다. 머리가 좋은 덕에 술식을 최대한으로 이용할 수 있는 편에 가깝지만 포텐셜만 많은 편이지 제대로 쓰지 못했다는 평가가 절대적이다.</p>
-                <p><b>4.2. 반전술식</b><br>카시모에게 터진 눈을 얼추 고친 채로 등장하고, 하카리의 팔에 주력을 불어넣는 걸 보면 반전술식을 사용할 수 있다. 주력이 음(-)의 성질임을 잘 이해하고 있고, 양(+)으로 바꾸는 것이 가능하단 것을 깨달은 것으로 보인다. 그러나 주력의 한계로 인해 깨끗하게 원 상태로 되돌리는 건 쉽지 않은 듯 보인다.</p>
+                <p><b>4.2. 반전술식</b><br>카시모에게 터진 눈을 얼추 고친 채로 등장하고, 하카리의 팔에 주력을 불어넣는 걸 보면 반전술식을 사용할 수 있습니다. 주력이 음(-)의 성질임을 잘 이해하고 있고, 양(+)으로 바꾸는 것이 가능하단 것을 깨달은 것으로 보인다. 그러나 주력의 한계로 인해 깨끗하게 원 상태로 되돌리는 건 쉽지 않은 듯 보인다.</p>
             </div>
         </div>
 
@@ -456,17 +455,23 @@
 <div id="popup" class="footnote-popup"></div>
 
 <script>
-    // 사멸회유 상단 틀 전용 토글
+    // 🔒 사멸회유 상단 틀 전용 토글 (기본 상태 처리 포함)
     function toggleFrameBody() {
         var body = document.getElementById("frame-body");
-        body.style.display = (body.style.display === "none") ? "block" : "none";
+        // 현재 계산된 display 속성값 가져오기
+        var currentDisplay = window.getComputedStyle(body).display;
+        body.style.display = (currentDisplay === "none") ? "block" : "none";
     }
 
     // 소제목 섹션 토글 함수
     function toggleSection(id) {
         var section = document.getElementById(id);
         var currentDisplay = window.getComputedStyle(section).display;
-        section.style.display = (currentDisplay === "none") ? "block" : "none";
+        if (id === 'sec-history') {
+            section.style.display = (currentDisplay === "block") ? "none" : "block";
+        } else {
+            section.style.display = (currentDisplay === "none" || currentDisplay === "") ? "block" : "none";
+        }
     }
 
     // 각주 레이어 팝업 기능
